@@ -26,7 +26,7 @@ public class LoginPage {
 	        PageFactory.initElements(driver, this);
 	    }
 
-	    @FindBy(xpath = "//i[contains(@class,'lp--user')]")
+	    @FindBy(xpath = "//button[@aria-label='user']")
 	    WebElement UserIcon;
 
 	    @FindBy(xpath = "//*[@id='mobileNo']")
