@@ -11,25 +11,23 @@ public class TC_001_Login_Functionality extends BaseData  {
 	@Test
 	public void login() throws InterruptedException {
 		
-        System.out.println(" driver is inherited from BaseData ✅");
-        LoginPage LP = new LoginPage(driver);
+		 System.out.println("Driver inherited from BaseData ✅");
+	        LoginPage LP = new LoginPage(driver);
 
-        Thread.sleep(7000);
-        LP.ClickOnUserIcon();
-  
+	        // ✅ Increased sleep for page load
+	        Thread.sleep(8000);
+	        LP.ClickOnUserIcon();
 
-        LP.Enter_Mobile_No("9960130048");
-        Thread.sleep(3000);
-        
-        LP.clickonContinue();
-        Thread.sleep(3000);
-        
-        LP.Enter_Password(746587);
-        Thread.sleep(3000);
+	        // ✅ Wait handled inside LoginPage methods now
+	        LP.Enter_Mobile_No("9960130048");
 
-        LP.clickLogin1();
-        Thread.sleep(3000);
+	        LP.clickonContinue();
 
+	        LP.Enter_Password(746587);
+
+	        LP.clickLogin1();
+
+	        Thread.sleep(3000);
   
 
       
