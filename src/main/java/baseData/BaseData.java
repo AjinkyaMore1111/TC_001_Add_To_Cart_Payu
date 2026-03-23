@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
@@ -29,6 +29,7 @@ public class BaseData {
 	    public void OpenBrowser() {
 
 	    	 ChromeOptions options = new ChromeOptions();
+	    	    options.addArguments("--headless=new");
 	    	    options.addArguments("--window-size=1920,1080");
 	    	    options.addArguments("--disable-gpu");
 	    	    options.addArguments("--no-sandbox");
@@ -49,7 +50,6 @@ public class BaseData {
 
 	    	    WebDriverManager.chromedriver().setup();
 	    	    driver = new ChromeDriver(options);
-	    	    driver.manage().window().maximize();
 	    	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	    	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 
@@ -146,7 +146,7 @@ public class BaseData {
 	    
 	    
 
-	   // @AfterClass
+	    @AfterClass
 	    public void CloseBrowser() {
 	        if (driver != null) {
 	            driver.quit();

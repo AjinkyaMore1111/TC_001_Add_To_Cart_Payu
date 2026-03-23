@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddToCart {
@@ -38,11 +39,13 @@ public class AddToCart {
 
     public void clickSearchbox()
     {
+    	wait.until(ExpectedConditions.elementToBeClickable(Searchbox));
     	Searchbox.click();
     }
 
     public void EnterKeyword()
     {
+    	wait.until(ExpectedConditions.visibilityOf(Searchkeyword));
     	Searchkeyword.sendKeys("TBHB2243");
     	Searchkeyword.sendKeys(Keys.ENTER);
     }
