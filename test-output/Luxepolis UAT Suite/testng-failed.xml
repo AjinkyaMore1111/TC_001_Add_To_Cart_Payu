@@ -6,12 +6,14 @@
   </listeners>
   <test thread-count="5" name="Login Test(failed)">
     <classes>
-      <class name="Test_Cases.TC_001_Login_Functionality">
+      <class name="Test_Cases.TC_001_Add_To_Cart_Payu">
         <methods>
           <include name="OpenBrowser"/>
+          <include name="CloseBrowser"/>
           <include name="login"/>
+          <include name="AddTocartToOnline_Pay"/>
         </methods>
-      </class> <!-- Test_Cases.TC_001_Login_Functionality -->
+      </class> <!-- Test_Cases.TC_001_Add_To_Cart_Payu -->
     </classes>
   </test> <!-- Login Test(failed) -->
 </suite> <!-- Failed suite [Luxepolis UAT Suite] -->

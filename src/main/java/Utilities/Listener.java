@@ -10,19 +10,16 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+public class Listener implements ITestListener {
 
-public class Listener implements ITestListener{
-	
-	
-	ExtentReports extent = ExtentReport.getExtentReports();
+    private static final String EXCEL_PATH = "C:\\Users\\ajinkya.more\\eclipse-workspaceAjinkya\\Ajinkya7-3\\luxepolis-test-framework\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+
+    ExtentReports extent = ExtentReport.getExtentReports();
     ExtentTest Test;
 
-    // ✅ Track pass/fail counts
     static int passCount = 0;
     static int failCount = 0;
     static int skipCount = 0;
-
-    // ✅ Track failed test names & reasons
     static List<String> failedTests = new ArrayList<>();
 
     @Override
@@ -40,12 +37,9 @@ public class Listener implements ITestListener{
     @Override
     public void onTestFailure(ITestResult result) {
         failCount++;
-
-        // ✅ Capture failed test name + error reason
         String failInfo = "❌ " + result.getName()
             + " → " + result.getThrowable().getMessage();
         failedTests.add(failInfo);
-
         Test.log(Status.FAIL, "Test Case Failed ❌");
         Test.log(Status.FAIL, result.getThrowable().getMessage());
     }
@@ -58,20 +52,14 @@ public class Listener implements ITestListener{
 
     @Override
     public void onFinish(org.testng.ITestContext context) {
+        // Flush report to disk first
         extent.flush();
-        // ✅ Wait for file to be fully written to disk
         try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
 
         System.out.println("Report Generated: " + ExtentReport.ReportPath);
 
-        EmailUtils.sendTestReport(
-            ExtentReport.ReportPath,
-            passCount,
-            failCount,
-            skipCount,
-            failedTests
-        );
-
-       
+        // Send one combined email with Excel + HTML report
+        String status = failCount > 0 ? "Fail" : "Pass";
+        EmailUtils.sendExcelReport(EXCEL_PATH, ExtentReport.ReportPath, status);
     }
 }

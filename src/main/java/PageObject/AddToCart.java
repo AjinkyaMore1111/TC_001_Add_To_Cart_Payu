@@ -1,55 +1,119 @@
 package PageObject;
 
 import java.time.Duration;
-
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.testng.asserts.SoftAssert;
+
+
+import Utilities.WaitUtilities;
 
 public class AddToCart {
 
-
     WebDriver driver;
+    WaitUtilities waitUtils;
     WebDriverWait wait;
+    JavascriptExecutor js;
 
     public AddToCart(WebDriver driver) {
         this.driver = driver;
-        // ✅ Increase wait to 30 seconds
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        this.waitUtils = new WaitUtilities(driver);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        this.js = (JavascriptExecutor) driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath="//button[@class='header--menu-search header--menu-search-icon position--relative pt--10 pb--10 "
-    		+ "pl--15 fs--12  font--family-Montserrat font--normal color--grey-light font--left ']")
-    WebElement Searchbox;
+    @FindBy(xpath = "//*[@type='button' and @aria-label='cart']")
+    WebElement Carticon;
 
+    @FindBy(xpath = "//*[@class='addToCart']")
+    WebElement AddToCart;
 
-    @FindBy(xpath="//input[@id='search']")
-    WebElement Searchkeyword;
+    @FindBy(xpath = "//*[text()='Grand Total']")
+    WebElement scrolldown;
 
+    @FindBy(xpath = "//button[contains(text(),'Pay Now')]")
+    WebElement paynow;
+    
+	
+    @FindBy(xpath = "//*[contains(text(),'Platform Fees')]/following-sibling::*")
+    WebElement platformFees;
 
+	 
+    
+    
+    
+	
+	  public boolean VerifyPlatformFees() throws InterruptedException {
+		  Thread.sleep(4000);
+		    
+		    String fees = platformFees.getText().trim();
+		    
+		    // Remove currency symbol if present e.g. "₹1,081" → "1,081"
+		    fees = fees.replace("₹", "").trim();
+		    
+		    System.out.println("Actual Platform Fees: " + fees);
+		    
+		    // Assert with meaningful message
+		   
+		    
+		    String Expected_fees="1,080";
+		    System.out.println("Expected Plarform Fees"+Expected_fees);
+		    
+		    SoftAssert assert1=new SoftAssert();
+		    assert1.assertEquals(fees, Expected_fees, 
+			        "Platform Fees mismatch! Expected: "+Expected_fees+" | Actual: " + fees);
+		    
+		    if (fees.equals(Expected_fees)) {
+		        System.out.println("Platform Fees: MATCH ✓");
+		        return true;
+		    } else {
+		        System.out.println("Platform Fees: NOT MATCH ✗");
+		        return false;
+		    }
+		    
+		    
+	  }
+	 
 
-
-
-
-
-    public void clickSearchbox()
-    {
-    	wait.until(ExpectedConditions.elementToBeClickable(Searchbox));
-    	Searchbox.click();
+    public void carticonClick() {
+        waitUtils.waitForClickability(Carticon);
+        js.executeScript("arguments[0].click();", Carticon);
     }
 
-    public void EnterKeyword()
-    {
-    	wait.until(ExpectedConditions.visibilityOf(Searchkeyword));
-    	Searchkeyword.sendKeys("TBHB2243");
-    	Searchkeyword.sendKeys(Keys.ENTER);
+    public void ClickOnAddtocart() {
+        waitUtils.waitForClickability(AddToCart);
+        js.executeScript("arguments[0].click();", AddToCart);
     }
 
+    public void checkout() {
+        WebElement btn = waitUtils.fluentWaitForElement(
+            By.xpath("//*[contains(@class,'btn btn--background') and contains(@type,'button')]")
+        );
+        js.executeScript("arguments[0].click();", btn);
+    }
 
+    public void ScrollDownPage() {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("window.scrollBy(0,500)", "");
+    }
 
+    public void AddressCheckout() {
+        WebElement btn = waitUtils.fluentWaitForElement(
+            By.xpath("//*[contains(@class,'btn btn--background') and contains(@type,'button')]")
+        );
+        js.executeScript("arguments[0].click();", btn);
+    }
+
+    public void ClickOnPayNow() {
+        waitUtils.waitForClickability(paynow);
+        js.executeScript("arguments[0].click();", paynow);
+    }
 }
