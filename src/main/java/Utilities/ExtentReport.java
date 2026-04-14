@@ -1,5 +1,6 @@
 package Utilities;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,9 +14,12 @@ public class ExtentReport {
 
     public static ExtentReports getExtentReports() {
         // ✅ Set path only once, when reports are actually initialized
-        ReportPath = System.getProperty("user.dir")
-            + "\\src\\test\\Luxepolis_TestCase_Report\\Luxepolis_"
-            + new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date())
+    	
+    	
+    	 ReportPath = System.getProperty("user.dir") +
+    		    File.separator + "src" + File.separator +
+    		    "test" + File.separator + "Luxepolis_TestCase_Report" +
+    		    File.separator + "Luxepolis_" + new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date())
             + ".html";
 
         ExtentSparkReporter Report = new ExtentSparkReporter(ReportPath);

@@ -87,6 +87,8 @@ public class Email_Sender {
 	// ✅ Dynamic report path
      String reportPath = ExtentReport.ReportPath;
      System.out.println("Sending report: " + reportPath);
+     
+
 
      // ✅ Add test counts manually if running standalone
      int passCount = 0;
