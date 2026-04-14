@@ -1,5 +1,6 @@
 package Test_Cases;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -19,7 +20,7 @@ import baseData.BaseData;
 @Listeners(Utilities.Listener.class)
 public class TC_001_Add_To_Cart_Payu extends BaseData {
 
-    static final String EXCEL_PATH = System.getProperty("user.dir") + "\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+    static final String EXCEL_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "Test_cases" + File.separator + "LuxepolisTest_Cases.xlsx";
 
     @Test(priority = 1)
     public void AddTocartToOnline_Pay() throws InterruptedException, IOException {

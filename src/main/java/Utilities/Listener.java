@@ -1,5 +1,6 @@
 package Utilities;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import com.aventstack.extentreports.Status;
 
 public class Listener implements ITestListener {
 
-    private static final String EXCEL_PATH = "C:\\Users\\ajinkya.more\\eclipse-workspaceAjinkya\\Ajinkya7-3\\luxepolis-test-framework\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+    private static final String EXCEL_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "Test_cases" + File.separator + "LuxepolisTest_Cases.xlsx";
 
     ExtentReports extent = ExtentReport.getExtentReports();
     ExtentTest Test;
