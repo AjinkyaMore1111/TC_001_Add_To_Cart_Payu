@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Luxepolis_UAT_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Luxepolis UAT Suite</span>
+              <span class="suite-name border-failed">Luxepolis UAT Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Luxepolis_UAT_Suite" class="hide-methods passed suite-Luxepolis_UAT_Suite"> (hide)</a> <!-- hide-methods passed suite-Luxepolis_UAT_Suite -->
-                      <a href="#" panel-name="suite-Luxepolis_UAT_Suite" class="show-methods passed suite-Luxepolis_UAT_Suite"> (show)</a> <!-- show-methods passed suite-Luxepolis_UAT_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Luxepolis_UAT_Suite" class="hide-methods failed suite-Luxepolis_UAT_Suite"> (hide)</a> <!-- hide-methods failed suite-Luxepolis_UAT_Suite -->
+                      <a href="#" panel-name="suite-Luxepolis_UAT_Suite" class="show-methods failed suite-Luxepolis_UAT_Suite"> (show)</a> <!-- show-methods failed suite-Luxepolis_UAT_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Luxepolis_UAT_Suite">
+                    <div class="method-list-content failed suite-Luxepolis_UAT_Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Luxepolis_UAT_Suite" title="Test_Cases.TC_001_Add_To_Cart_Payu" class="method navigator-link" hash-for-method="AddTocartToOnline_Pay">AddTocartToOnline_Pay</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Luxepolis_UAT_Suite -->
+                    </div> <!-- method-list-content failed suite-Luxepolis_UAT_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,9 +118,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Luxepolis_UAT_Suite" class="panel Luxepolis_UAT_Suite">
-          <div class="suite-Luxepolis_UAT_Suite-class-passed">
+          <div class="suite-Luxepolis_UAT_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">Test_Cases.TC_001_Add_To_Cart_Payu</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -129,10 +129,42 @@
                   <a name="AddTocartToOnline_Pay">
                   </a> <!-- AddTocartToOnline_Pay -->
                   <span class="method-name">AddTocartToOnline_Pay</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@class=&apos;addToCart&apos;] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Utilities.WaitUtilities.waitForVisibility(WaitUtilities.java:65)
+	at Test_Cases.TC_001_Add_To_Cart_Payu.AddTocartToOnline_Pay(TC_001_Add_To_Cart_Payu.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=147.0.7727.56)
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3f1cbb4718f41bb0f7999c624c4db233, findElement {using=xpath, value=//*[@class=&apos;addToCart&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.56 (b28eac7a1a97..., userDataDir: C:\Users\AJINKY~1.MOR\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50900}, goog:processID: 13956, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50900/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f1cbb4718f41bb0f7999c624c4db233
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 28 more
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Luxepolis_UAT_Suite-class-passed -->
+          </div> <!-- suite-Luxepolis_UAT_Suite-class-failed -->
         </div> <!-- panel Luxepolis_UAT_Suite -->
         <div panel-name="test-xml-Luxepolis_UAT_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -192,12 +224,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'AddTocartToOnline_Pay')
 data.setCell(0, 2, 'Test_Cases.TC_001_Add_To_Cart_Payu')
-data.setCell(0, 3, 19547);
+data.setCell(0, 3, 23999);
 window.suiteTableData['Luxepolis_UAT_Suite']= { tableData: data, tableDiv: 'times-div-Luxepolis_UAT_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
               <div id="times-div-Luxepolis_UAT_Suite">
               </div> <!-- times-div-Luxepolis_UAT_Suite -->
             </div> <!-- times-div -->
@@ -230,15 +262,17 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">login</span>
-                <span class="method-start">3106 ms</span>
+                <span class="method-start">3645 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">AddTocartToOnline_Pay</span>
-                <span class="method-start">25191 ms</span>
+                <span class="method-start">25597 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">CloseBrowser</span>
-                <span class="method-start">44743 ms</span>
+                <span class="method-start">49602 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -30,7 +29,6 @@ public class BaseData {
 
         ChromeOptions options = new ChromeOptions();
 
-        options.addArguments("--start-maximized");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-save-password-bubble");
         options.addArguments("--disable-features=PasswordCheck");
@@ -72,8 +70,17 @@ public class BaseData {
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--incognito"); // ← fresh profile, no saved passwords
-        
-        
+
+        // Run headless on Linux server (no display), headed on Windows
+        if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
+        } else {
+            options.addArguments("--start-maximized");
+        }
 
         // Bypass bot detection
         options.addArguments("--disable-blink-features=AutomationControlled");
@@ -117,8 +124,7 @@ public class BaseData {
         WebElement userIcon = waitUtils.waitForClickability(
             By.xpath("//i[@class='lp--user fs--22 undefined']")
         );
-        Actions action = new Actions(driver);
-        action.moveToElement(userIcon).click().build().perform();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", userIcon);
         System.out.println("[" + sdf.format(new Date()) + "] User Icon Clicked");
 
         // Step 2: Enter Mobile Number
