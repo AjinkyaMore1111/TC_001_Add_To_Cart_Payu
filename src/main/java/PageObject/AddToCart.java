@@ -33,7 +33,7 @@ public class AddToCart {
     @FindBy(xpath = "//*[@type='button' and @aria-label='cart']")
     WebElement Carticon;
 
-    @FindBy(xpath = "//*[@class='addToCart']")
+    @FindBy(xpath = "//*[contains(@class,'addToCart')]")
     WebElement AddToCart;
 
     @FindBy(xpath = "//*[text()='Grand Total']")
