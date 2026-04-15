@@ -41,7 +41,7 @@ public class TC_001_Add_To_Cart_Payu extends BaseData {
             SP.EnterKeyword(productKeyword);
             SP.ClickOnSearchResult();
             // Wait for product page: add-to-cart button must be visible before interacting
-            waitUtils.waitForVisibility(org.openqa.selenium.By.xpath("//*[contains(@class,'addToCart')]"));
+            waitUtils.waitForVisibility(org.openqa.selenium.By.xpath("//*[contains(@class,'addToCart')]"), 30);
 
             //-------------------------------------------------------------------------------------------------------------------
 

@@ -58,7 +58,6 @@ public class SearchProduct {
 
     public void ClickOnSearchResult() {
         By locator = By.xpath("//div[contains(@class,'fullScreen header-search-modal')]//div[contains(@class,'bg--white')]//div[2]//ul[1]//li[1]//div[1]//a[1]");
-        waitUtils.waitForClickability(locator);
-        js.executeScript("arguments[0].click();", driver.findElement(locator));
+        waitUtils.waitForClickability(locator).click();
     }
 }
