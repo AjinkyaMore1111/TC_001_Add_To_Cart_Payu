@@ -106,10 +106,9 @@ public class AddToCart {
     }
 
     public void AddressCheckout() {
-        WebElement btn = waitUtils.fluentWaitForElement(
-            By.xpath("//*[contains(@class,'btn btn--background') and contains(@type,'button')]")
-        );
-        js.executeScript("arguments[0].click();", btn);
+        By locator = By.xpath("//*[contains(@class,'btn btn--background') and contains(@type,'button')]");
+        waitUtils.fluentWaitForElement(locator);
+        js.executeScript("arguments[0].click();", driver.findElement(locator));
     }
 
     public void ClickOnPayNow() {
