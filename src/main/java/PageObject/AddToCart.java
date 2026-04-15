@@ -101,7 +101,7 @@ public class AddToCart {
     }
 
     public void ScrollDownPage() {
-    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	JavascriptExecutor js = (JavascriptExecutor) driver;	
     	js.executeScript("window.scrollBy(0,500)", "");
     }
 

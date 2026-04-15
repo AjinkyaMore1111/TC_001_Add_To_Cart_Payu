@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-15T11:03:28 IST" name="Luxepolis UAT Suite" finished-at="2026-04-15T11:04:13 IST" duration-ms="44567">
+  <suite started-at="2026-04-15T12:35:48 IST" name="Luxepolis UAT Suite" finished-at="2026-04-15T12:36:28 IST" duration-ms="39802">
     <groups>
     </groups>
-    <test started-at="2026-04-15T11:03:28 IST" name="Login Test" finished-at="2026-04-15T11:04:13 IST" duration-ms="44567">
+    <test started-at="2026-04-15T12:35:48 IST" name="Login Test" finished-at="2026-04-15T12:36:28 IST" duration-ms="39802">
       <class name="Test_Cases.TC_001_Add_To_Cart_Payu">
-        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T11:03:24 IST" name="OpenBrowser" finished-at="2026-04-15T11:03:28 IST" duration-ms="4534" status="PASS">
+        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T12:35:44 IST" name="OpenBrowser" finished-at="2026-04-15T12:35:48 IST" duration-ms="3924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T11:03:28 IST" name="login" finished-at="2026-04-15T11:03:50 IST" duration-ms="21871" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T12:35:48 IST" name="login" finished-at="2026-04-15T12:36:10 IST" duration-ms="21807" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="AddTocartToOnline_Pay()[pri:1, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T11:03:50 IST" name="AddTocartToOnline_Pay" finished-at="2026-04-15T11:04:13 IST" duration-ms="22419" status="PASS">
+        <test-method signature="AddTocartToOnline_Pay()[pri:1, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T12:36:10 IST" name="AddTocartToOnline_Pay" finished-at="2026-04-15T12:36:27 IST" duration-ms="17709" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddTocartToOnline_Pay -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T11:04:13 IST" name="CloseBrowser" finished-at="2026-04-15T11:04:13 IST" duration-ms="225" status="PASS">
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:Test_Cases.TC_001_Add_To_Cart_Payu@452e19ca]" started-at="2026-04-15T12:36:27 IST" name="CloseBrowser" finished-at="2026-04-15T12:36:28 IST" duration-ms="223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->

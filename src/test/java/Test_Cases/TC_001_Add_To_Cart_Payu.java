@@ -138,7 +138,9 @@ public class TC_001_Add_To_Cart_Payu extends BaseData {
 
             // Place Order Cash on Delivery
             CODCredential COD = new CODCredential(driver);
+            Thread.sleep(5000);
             COD.clickonPlaceOrderButton();
+            Thread.sleep(10000);
 
             
             

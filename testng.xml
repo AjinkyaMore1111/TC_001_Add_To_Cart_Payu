@@ -16,7 +16,6 @@
         <classes>
            <!--<class name="Test_Cases.TC_001_Login_Functionality"/>-->
             <class name="Test_Cases.TC_001_Add_To_Cart_Payu"/>
-          <!--   <class name="Test_Cases.TC_004_Add_Test"/> -->
           <!--   <class name="Test_Cases.TC_002_Add_To_Cart_COD"/> -->
         </classes>
     </test>
