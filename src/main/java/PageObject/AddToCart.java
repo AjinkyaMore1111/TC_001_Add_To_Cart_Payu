@@ -1,5 +1,6 @@
 package PageObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -61,7 +62,7 @@ public class AddToCart   {
     @FindBy(xpath = "//*[contains(text(),'Platform Fees')]/following-sibling::*")
     WebElement platformFees;
     
-    static final String EXCEL_PATH = System.getProperty("user.dir") + "\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+    static final String EXCEL_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "Test_cases" + File.separator + "LuxepolisTest_Cases.xlsx";
     
     // ===================== METHOD: VerifyPlatformFees =====================
     // PURPOSE: Get actual fees from Webpage, compare with expected from Excel
