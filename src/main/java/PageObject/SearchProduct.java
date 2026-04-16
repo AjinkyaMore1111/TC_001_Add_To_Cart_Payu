@@ -1,18 +1,14 @@
 package PageObject;
 
 import java.time.Duration;
-import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Utilities.WaitUtilities;
 
@@ -57,19 +53,13 @@ public class SearchProduct {
         input.sendKeys(Keys.SPACE);
         Thread.sleep(2000);
         input.sendKeys(Keys.SPACE);
+        Thread.sleep(2000);
+        input.sendKeys(Keys.SPACE);
         
     }
 
     public void ClickOnSearchResult() {
-        By locator = By.xpath("//div[contains(@class,'fullScreen header-search-modal')]//div[contains(@class,'bg--white')]//div[2]//ul[1]//li[1]//div[1]//a[1]");
-        Wait<WebDriver> fluentWait = new FluentWait<>(driver)
-            .withTimeout(Duration.ofSeconds(30))
-            .pollingEvery(Duration.ofMillis(500))
-            .ignoring(NoSuchElementException.class)
-            .ignoring(StaleElementReferenceException.class);
-        fluentWait.until(drv -> {
-            drv.findElement(locator).click();
-            return true;
-        });
+        waitUtils.waitForClickability(SearchResult);
+        js.executeScript("arguments[0].click();", SearchResult);
     }
 }

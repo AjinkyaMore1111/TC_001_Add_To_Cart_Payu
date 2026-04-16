@@ -26,7 +26,7 @@ public class BaseData {
     public WebDriver driver;
     public WaitUtilities waitUtils;
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void OpenBrowser() {
 
         ChromeOptions options = new ChromeOptions();
@@ -102,7 +102,7 @@ public class BaseData {
         System.out.println("Browser Opened Successfully");
     }
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login() throws InterruptedException {
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
@@ -116,7 +116,7 @@ public class BaseData {
 
         System.out.println("[" + sdf.format(new Date()) + "] Entering Mobile No...");
         waitUtils.waitForVisibility(By.xpath("//*[@id='mobileNo']"))
-            .sendKeys("9960130048");
+            .sendKeys("9110450235");
         System.out.println("[" + sdf.format(new Date()) + "] Mobile No Entered");
 
         System.out.println("[" + sdf.format(new Date()) + "] Clicking Continue...");
@@ -142,7 +142,7 @@ public class BaseData {
         System.out.println("[" + sdf.format(new Date()) + "] Login Successful");
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void CloseBrowser() {
         if (driver != null) {
             driver.quit();

@@ -8,12 +8,12 @@ import org.testng.Assert;
 
 import Utilities.WaitUtilities;
 
-public class ApplyCoupons {
+public class ApplyCoupon {
 	
 	WebDriver driver;
 	WaitUtilities waitUtils;
 	
-	public ApplyCoupons(WebDriver driver){
+	public ApplyCoupon(WebDriver driver){
 	this.driver = driver; //class variable assign to constructor
 	 this.waitUtils = new WaitUtilities(driver);
 	PageFactory.initElements(driver, this);
@@ -31,9 +31,11 @@ public class ApplyCoupons {
    @FindBy(xpath = "//span[starts-with(text (), 'Discount')]")
    WebElement OrderSummery;
    
-   @FindBy(xpath  = "//span[@class = 'fs--20 font--bold font--family-Montserrat color--black white--space-nowrap']")
-   WebElement getPrice;
+   @FindBy(xpath = "//span[@class='fs--16 font--bold font--family-Montserrat color--black white--space-nowrap']")
+   WebElement CouponPercentage;
    
+   @FindBy(xpath = "//span[@class='fs--16 font--bold font--family-Montserrat color--success white--space-nowrap']")
+   WebElement DiscountPrice;
    
    public void clickAppyCouponButton() {
 	   
@@ -63,6 +65,27 @@ public class ApplyCoupons {
 	    return summarycouponCode;
 	    
    }
+   
+   public String getCouponPercentage() {
+	    String couponCode = getOrderSummerycode();  // "TEST10"
+	    String summarycouponCodes = couponCode.replaceAll("[^0-9]", "");
+	    int couponPercentage = Integer.parseInt(summarycouponCodes);  // 10
+	    // Extract price from WebElement → "₹ 23,000" → "23000"
+	    String priceText = CouponPercentage.getText();                        // "₹ 23,000"
+	    int priceValue = Integer.parseInt(priceText.replaceAll("[^0-9]", "")); // 23000
+	    // Calculate discount
+	    int afterCouponValue = (priceValue * couponPercentage) / 100;  // 2300
+	    System.out.println(afterCouponValue);
+	    return String.valueOf(afterCouponValue);  // "2300"
+	}
+   
+   public String getDiscountPrice() {
+	   String discountText = DiscountPrice.getText();
+	    String cleanValue = discountText.replaceAll("[^0-9,]", "").replace(",", "");
+	    return cleanValue;     
+   }
+   
+   
    public void compareCouponCodes() {
 	    String couponCode = getCouponCode();             // "Test10"
 	    String summaryCode = getOrderSummerycode();      // "TEST10"
@@ -73,19 +96,16 @@ public class ApplyCoupons {
 	    boolean isMatch = couponCode.equalsIgnoreCase(summaryCode); // true
 	    Assert.assertTrue(isMatch, "Coupon code mismatch!");
 	    System.out.println("Coupon Code Matched Successfully!");
-	    
 	}
    
-   public void priceValidation() {
-	    String priceText = getPrice.getText();
-	    priceText = priceText.replaceAll("[^0-9]", "");
-	    int comparePrice = Integer.parseInt(priceText);
-
-	    int hardcodedPrice = 29212;
-
-	    Assert.assertEquals(comparePrice, hardcodedPrice, "Price validation failed!");
-	    System.out.println("Price matched: " + comparePrice);
-	}
+   public void compareDiscountValue() {
+	   String calclatedDiscount = getCouponPercentage();
+	   String UiDiscount = getDiscountPrice();
+	   boolean valuMatch  = calclatedDiscount.equals(UiDiscount);
+	   Assert.assertTrue(valuMatch, "Coupon Discount mismatch");
+	   System.out.println("Coupon value validate Successfully!");
+			
+	   
+   }
    
-
 }

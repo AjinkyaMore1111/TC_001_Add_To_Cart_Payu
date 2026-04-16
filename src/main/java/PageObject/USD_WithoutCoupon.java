@@ -8,12 +8,12 @@ import org.testng.Assert;
 
 import Utilities.WaitUtilities;
 
-public class withoutCoupons {
-
+public class USD_WithoutCoupon {
+	
 	WebDriver driver;
 	WaitUtilities waitUtils;
 	
-	public withoutCoupons(WebDriver driver){
+	public USD_WithoutCoupon(WebDriver driver){
 	this.driver = driver; //class variable assign to constructor
 	 this.waitUtils = new WaitUtilities(driver);
 	PageFactory.initElements(driver, this);
@@ -24,20 +24,24 @@ public class withoutCoupons {
    WebElement getPrice;
    
   
-   public void priceValidation() {
+   public void priceValidation_USD() {
 	   
 	    String priceText = getPrice.getText();
 	    //String PriceTextRemoveSpace=priceText.trim();
-	    priceText = priceText.replaceAll("[₹,]","").trim();
+	    priceText = priceText.replaceAll("[$]","").trim();
+	    
+	    
+	    
 	    int comparePrice = Integer.parseInt(priceText);
 
-	    int hardcodedPrice = 32457;
+	    int hardcodedPrice = 441;
 
 	    Assert.assertEquals(comparePrice, hardcodedPrice, "Price validation failed!");
 	    System.out.println("Price matched: " + comparePrice);
 	    
 	}
-  
    
 	
+  
+
 }
