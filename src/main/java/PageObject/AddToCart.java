@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-import javax.swing.text.Utilities;
+
 
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.openqa.selenium.By;
@@ -13,8 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 

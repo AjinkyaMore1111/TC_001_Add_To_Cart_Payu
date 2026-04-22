@@ -41,7 +41,7 @@ import java.time.Duration;
 
 	    @FindBy(xpath = "//button[contains(text(),'Pay Now')]")
 	    WebElement paynow;
-		private By clickradiobutton;
+		//private By clickradiobutton;
 
 	    public void ClickOnAddtocart() {
 	        waitUtils.waitForClickability(AddToCart);

@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Cases.TC_001_Add_To_Cart_Payu">
+      <class name="Test_Cases.TC_001_Add_to_Cart_COD_Sandeep">
         <methods>
           <include name="OpenBrowser"/>
-          <include name="CloseBrowser"/>
           <include name="login"/>
-          <include name="AddTocartToOnline_Pay"/>
+          <include name="CloseBrowser"/>
+          <include name="ADDToCartCOD2"/>
+          <include name="ADDToCartCOD"/>
+          <include name="ADDToCartCOD1"/>
         </methods>
-      </class> <!-- Test_Cases.TC_001_Add_To_Cart_Payu -->
+      </class> <!-- Test_Cases.TC_001_Add_to_Cart_COD_Sandeep -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

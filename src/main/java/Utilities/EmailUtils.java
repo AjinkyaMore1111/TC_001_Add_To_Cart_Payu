@@ -98,7 +98,7 @@ public class EmailUtils {
             List<String> failedTests) {
 
         final String senderEmail    = "ajinkyaqa591@gmail.com";
-        final String appPassword    = "swdr dgvg nghr qvgd";
+        final String appPassword    = "uycn pykh qewk tvdx";
         final String recipientEmail = "ajinkyaqa591@gmail.com";
 
         // SMTP Properties — SSL on port 465

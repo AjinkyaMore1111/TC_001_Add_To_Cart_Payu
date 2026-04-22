@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Luxepolis UAT Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="Utilities.Listener"/>
-  </listeners>
-  <test thread-count="5" name="Login Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="login"/>
-          <include name="CloseBrowser"/>
-          <include name="ADDToCartCOD1"/>
-          <include name="ADDToCartCOD3"/>
-          <include name="ADDToCartCOD2"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep -->
-      <class name="Test_Cases.TC_001_Add_To_Cart_Payu_Prashant">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="login"/>
-          <include name="CloseBrowser"/>
-          <include name="AddTocartToOnline_Pay_TC_Luxe_010"/>
-          <include name="AddTocartToOnline_Pay_TC_Luxe_009"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_001_Add_To_Cart_Payu_Prashant -->
-      <class name="Test_Cases.TC_002_Add_To_Cart_Coupon_Shruti">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="CloseBrowser"/>
-          <include name="login"/>
-          <include name="ADDToCartCODCouponWithoutSpecialprice"/>
-          <include name="ADDToCartPayu"/>
-          <include name="ADDToCartCOD"/>
-          <include name="ADDToCartCODCoupon"/>
-          <include name="USDWithoutCoupon"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_002_Add_To_Cart_Coupon_Shruti -->
       <class name="Test_Cases.TC_001_Add_to_Cart_COD_Sandeep">
         <methods>
           <include name="OpenBrowser"/>
@@ -48,5 +14,5 @@
         </methods>
       </class> <!-- Test_Cases.TC_001_Add_to_Cart_COD_Sandeep -->
     </classes>
-  </test> <!-- Login Test(failed) -->
-</suite> <!-- Failed suite [Luxepolis UAT Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

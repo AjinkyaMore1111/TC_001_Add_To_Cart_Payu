@@ -6,47 +6,14 @@
   </listeners>
   <test thread-count="5" name="Login Test(failed)">
     <classes>
-      <class name="Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="login"/>
-          <include name="CloseBrowser"/>
-          <include name="ADDToCartCOD1"/>
-          <include name="ADDToCartCOD3"/>
-          <include name="ADDToCartCOD2"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep -->
       <class name="Test_Cases.TC_001_Add_To_Cart_Payu_Prashant">
         <methods>
           <include name="OpenBrowser"/>
           <include name="login"/>
           <include name="CloseBrowser"/>
-          <include name="AddTocartToOnline_Pay_TC_Luxe_010"/>
-          <include name="AddTocartToOnline_Pay_TC_Luxe_009"/>
+          <include name="AddTocartToOnline_Pay_TC_Luxe_008"/>
         </methods>
       </class> <!-- Test_Cases.TC_001_Add_To_Cart_Payu_Prashant -->
-      <class name="Test_Cases.TC_002_Add_To_Cart_Coupon_Shruti">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="CloseBrowser"/>
-          <include name="login"/>
-          <include name="ADDToCartCODCouponWithoutSpecialprice"/>
-          <include name="ADDToCartPayu"/>
-          <include name="ADDToCartCOD"/>
-          <include name="ADDToCartCODCoupon"/>
-          <include name="USDWithoutCoupon"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_002_Add_To_Cart_Coupon_Shruti -->
-      <class name="Test_Cases.TC_001_Add_to_Cart_COD_Sandeep">
-        <methods>
-          <include name="OpenBrowser"/>
-          <include name="login"/>
-          <include name="CloseBrowser"/>
-          <include name="ADDToCartCOD2"/>
-          <include name="ADDToCartCOD"/>
-          <include name="ADDToCartCOD1"/>
-        </methods>
-      </class> <!-- Test_Cases.TC_001_Add_to_Cart_COD_Sandeep -->
     </classes>
   </test> <!-- Login Test(failed) -->
 </suite> <!-- Failed suite [Luxepolis UAT Suite] -->
