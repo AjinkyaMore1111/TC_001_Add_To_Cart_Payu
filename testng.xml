@@ -10,9 +10,9 @@
         <classes>
          
          <!--    <class name="Test_Cases.TC_001_Add_to_Cart_COD_Sandeep"/> -->
-            <class name="Test_Cases.TC_001_Add_To_Cart_Payu_Prashant"/>
+      <!--       <class name="Test_Cases.TC_001_Add_To_Cart_Payu_Prashant"/> -->
       <!--         <class name="Test_Cases.TC_001_Add_to_Cart_COD_Sandeep"/> -->
-        <!--     <class name="Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep"/> -->
+            <class name="Test_Cases.TC_002_Add_to_Cart_International_COD_Sandeep"/>
            
         </classes>
     </test>
