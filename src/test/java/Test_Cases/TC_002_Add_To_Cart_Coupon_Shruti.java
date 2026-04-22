@@ -1,5 +1,6 @@
 package Test_Cases;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -20,7 +21,7 @@ import baseData.BaseData;
 
 public class TC_002_Add_To_Cart_Coupon_Shruti extends BaseData {
 
-	static final String EXCEL_PATH = System.getProperty("user.dir")+"\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+	static final String EXCEL_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "Test_cases" + File.separator + "LuxepolisTest_Cases.xlsx";
 
 	  @Test(priority = 1 , groups = {"Coupon"})
 	    public void ADDToCartCODCoupon() throws InterruptedException, IOException {

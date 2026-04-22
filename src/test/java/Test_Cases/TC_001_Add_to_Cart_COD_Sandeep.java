@@ -18,7 +18,7 @@ import baseData.BaseData;
 public class TC_001_Add_to_Cart_COD_Sandeep extends BaseData {
 	
 	static final String EXCEL_PATH =
-	        System.getProperty("user.dir") + "\\src\\main\\Test_cases\\LuxepolisTest_Cases.xlsx";
+	        System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "Test_cases" + File.separator + "LuxepolisTest_Cases.xlsx";
 
 	 @Test(priority = 1)
 	    public void ADDToCartCOD() throws InterruptedException, IOException {
